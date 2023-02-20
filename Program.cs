@@ -25,14 +25,15 @@
             Console.WriteLine("1. Fyra uttryck");
             Console.WriteLine("2. Två uttryck");
             Console.WriteLine("3. Byta inehåll i variabler");
-            Console.WriteLine("4. SumQuad - Summan av alla kvadrater");
-            Console.WriteLine("5. Factorial");
+            Console.WriteLine("4. Uttryck");
+            Console.WriteLine("5. Fel variabel typ ");
             Console.WriteLine("6. Samma som nr. 5");
-            Console.WriteLine("7. Foor-loop");
-            Console.WriteLine("8. Kvadratroten");
-            Console.WriteLine("9. Kubikroten");
-            Console.WriteLine("10. Kvadratrötterna och kubikroten ");
-            Console.WriteLine("11. Tria + IsEven + ");
+            Console.WriteLine("7. Tal 2 eller större än 5");
+            Console.WriteLine("D11-ovn-1.2 – loopar");
+            Console.WriteLine("8. While till do while");
+            Console.WriteLine("9. Medelvärde");
+            Console.WriteLine("10. static-metod Cube");
+            Console.WriteLine("11. Tria + IsEven + primtal ");
             Console.WriteLine("44. Primtal 1-10");
             Console.WriteLine("99. Avsluta");
 
@@ -143,10 +144,10 @@
                   false || true   True
                   false && true   False
                      ! false      True            */
-                Console.WriteLine(false && false); // False
-                Console.WriteLine(false || true);  // True
-                Console.WriteLine(false && true);  // False
-                Console.WriteLine(!false);        // True
+                Console.WriteLine($"false && false ger {false && false}"); // False
+                Console.WriteLine($"false || true ger {false || true}");  // True
+                Console.WriteLine($"false && true ger {false && true}");  // False
+                Console.WriteLine($"!false ger {!false}");        // True
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("");
                 reset();
@@ -195,15 +196,30 @@
 
                 reset();
             }
-            static void ovning8()
+            static void ovning9()
             {
+                Console.Write("Hur många tal vill du mata in: ");
+                int n = int.Parse(Console.ReadLine());
+
+                double summa = 0;
+                for (int i = 1; i <= n; i++)
+                {
+                    Console.Write("Ange tal " + i + ": ");
+                    double tal = double.Parse(Console.ReadLine());
+                    summa += tal;
+                }
+
+                double medelvärde = summa / n;
+
+                Console.WriteLine("Summa = " + summa);
+                Console.WriteLine("Medelvärde = " + medelvärde);
 
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("");
                 reset();
 
             }
-            static void ovning9()
+            static void ovning8()
             {
                 int s = 0, prod = 1;
                 s = s + 1;
